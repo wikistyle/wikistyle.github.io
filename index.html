@@ -22,9 +22,11 @@
   <header id="header" class="inner"><nav>
   <ul>
     
-      <li><a href="/">Home</a></li>
+      <li><a href="/">首页</a></li>
     
-      <li><a href="/archives">Archives</a></li>
+      <li><a href="http://wikistyle.cnblogs.com">博客园</a></li>
+    
+      <li><a href="/archives">归档</a></li>
     
   </ul>
 </nav></header>
@@ -73,7 +75,9 @@
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ brew install npm</div><div class="line">$ npm install -g hexo</div></pre></td></tr></table></figure>
 
-<hr>
+
+
+<p>==========</p>
 <h3 id="快速搭建个人博客网站">快速搭建个人博客网站</h3>
 <p>我们选择在Github上来搭建自己的博客。所有，你首先要有自己的Github账号。</p>
 <p>登录自己的Github，创建一个名为${username}.github.io的仓库，其中${username}就是你的github用户名，比如我的Github为wikistyle，所以我创建了一个名为wikistyle.github.io的仓库。</p>
@@ -97,7 +101,7 @@
 <p>有了如上配置，在命令行下执行如下命令即可将项目部署到Github中：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d -g</div></pre></td></tr></table></figure>
 
-<hr>
+<p>==========</p>
 <h4 id="关于代码高亮和顶级域名配置的说明">关于代码高亮和顶级域名配置的说明</h4>
 <p>Hexo默认的主题虽然支持代码高亮功能（Hexo默认使用<a href="https://highlightjs.org/" target="_blank" rel="external">highlight</a>插件对代码进行高亮显示），但是不显示代码行号。具体原因有待考证:)</p>
 <p>更换为phase主题后，将代码插入到</p>
@@ -107,7 +111,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="keyword">static</span> <span class="title">main</span>(String[] args) {</div><div class="line">	System.out.println(<span class="string">"Hello world"</span>);</div><div class="line">	System.out.println(<span class="string">"Welcome to my blog on Github~~~"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>对于顶级域名的绑定，其实也很简单，在hexo目录的source子目录下创建一个名为CNAME的文件，不需要文件扩展名。其内容为你的域名，如<a href="http://www.wikistyle.cn" target="_blank" rel="external">www.wikistyle.cn</a>。然后执行<code>hexo d -g</code>重新部署即可。当然，还需要你在你的域名管理系统中添加一个CNAME指向，其目的地址即为你创建的仓库名称，如<a href="http://wikistyle.github.io" target="_blank" rel="external">wikistyle.github.io</a>。</p>
-<hr>
+<p>============</p>
 <h4 id="参考文献">参考文献</h4>
 <ol>
 <li><a href="http://dhq.me/mac-apt-get-homebrew" target="_blank" rel="external">Mac 系统下类似于 apt-get 的软件包管理器 — Homebrew</a></li>
@@ -141,6 +145,8 @@
   
   
   
+  
+    <a class="github" href="https://github.com/http://github.com/wikistyle" title="GitHub">GitHub</a>
   
   <a class="rss" href="/atom.xml" title="RSS">RSS</a>
 </div>
