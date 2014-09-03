@@ -46,89 +46,81 @@
   <header>
     
   
-    <h1 class="title"><a href="/2014/09/03/hmd/">h.md</a></h1>
+    <h1 class="title"><a href="/2014/09/03/deploy_to_github_with_hexomd/">deploy_to_github_with_hexo.md</a></h1>
   
 
-    <time datetime="2014-09-03T04:35:43.000Z">
+    <time datetime="2014-09-03T12:46:02.000Z">
   <span class="day">3</span><span class="month">9月</span>
 </time>
   </header>
   <div class="entry-content">
     
-      <script>hljs.initHighlightingOnLoad();</script>
+      <h2 id="使用Hexo在Github上搭建自己的博客（Base_on_Mac）">使用Hexo在Github上搭建自己的博客（Base on Mac）</h2>
+<p>本文要实现的目标是在Github上搭建一个静态网站，并且支持顶级域名的绑定和代码的高亮显示。这里我使用Hexo来搭建自己的静态网站。</p>
+<h4 id="基础环境的搭建">基础环境的搭建</h4>
+<ol>
+<li>为方便软件的安装，首先我们需要在Mac上安装一个类似Linux下包管理的软件。</li>
+</ol>
+<blockquote>
+<p>这里我选择的是<a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a>。在Mac下，由于预安装了Ruby运行环境，所以安装Homebrew非常的方便，只需要一行命令&gt; 即可：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; $ ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div></pre></td></tr></table></figure>
 
-<p>`public static void main(){</p>
-<pre><code>System.<span class="keyword">out</span>.println(<span class="string">"Hello World"</span>);
-System.<span class="keyword">out</span>.println(<span class="string">"Hi, word"</span>);
-</code></pre><p> }`</p>
-<pre><code> <span class="keyword">public</span> <span class="keyword">void</span> <span class="keyword">static</span> <span class="title">main</span>() {
+<blockquote>
+<p>有关Homebrew的介绍，大家可以去其<a href="http://brew.sh" target="_blank" rel="external">官网</a>查看，这里就不再累述。</p>
+</blockquote>
+<ol>
+<li>有了Homebrew做铺垫，安装<a href="http://hexo.io" target="_blank" rel="external">Hexo</a>就非常的容易了。</li>
+</ol>
+<blockquote>
+<p> 参考Hexo<a href="http://hexo.io/docs/" target="_blank" rel="external">官方文档</a>的提示，安装Hexo只需要简单的几条命令即可。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;  $ brew install npm</div><div class="line">&gt;  $ npm install -g hexo</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 
-     System.<span class="keyword">out</span>.println(<span class="string">"hello world"</span>);
-     System.<span class="keyword">out</span>.println(<span class="string">"two lines"</span>);
- }
-</code></pre>
-    
-    
-    <footer class="meta">
-      
-      
-      
-    </footer>
-    
-  </div>
-  
-</article>
+<h3 id="快速搭建个人博客网站">快速搭建个人博客网站</h3>
+<p>我们选择在Github上来搭建自己的博客。所有，你首先要有自己的Github账号。</p>
+<p>登录自己的Github，创建一个名为${username}.github.io的仓库，其中${username}就是你的github用户名，比如我的Github为wikistyle，所以我创建了一个名为wikistyle.github.io的仓库。</p>
+<p>在本地选择一个文件目录，这个目录将作为你个人网站的本地工作目录。比如hexo目录</p>
+<p>进入hexo目录，执行如下创建来初始化Hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo init .</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
 
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title"><a href="/2014/08/16/hello-world/">Hello World</a></h1>
-  
+<p>为了给浏览者一个美的效果，这里我选择使用<a href="https://github.com/hexojs/hexo-theme-phase" target="_blank" rel="external">Phase</a>来替换默认的主题。 替换的方式非常的简单，我们只需要在hexo目录下执行如下命令，并在_config.yml文件中配置下theme项即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone git://github.com/tommy351/hexo-theme-phase.git themes/phase</div></pre></td></tr></table></figure>
 
-    <time datetime="2014-08-16T03:12:20.000Z">
-  <span class="day">16</span><span class="month">8月</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>为了能快速部署到Github上，并且使得我们的主题生效，需要配置下hexo目录下的_config.yml文件，其中该文件的配置说明，大家可以参考<a href="http://hexo.io/docs/configuration.html" target="_blank" rel="external">这里</a>。</p>
+<p>这里，我们主要是配置theme和deploy项，其他内容大家根据自己的情况配置即可。</p>
+<p><strong>值得注意</strong>的是_config.yml的每项配置，需要在冒号(:)后面多添加一个空格。</p>
+<p>在_config.yml文件中定位到theme选项（位于文档的最后部分），作如下配置：</p>
+<p><code>theme: phase</code></p>
+<p>定位到deploy选项，根据自己的Github账号配置类似如下的信息：</p>
+<p><code>deploy:
+  type: github
+  repo: git@github.com:wikistyle/wikistyle.github.io.git
+  branch: master</code></p>
+<p>有了如上配置，在命令行下执行如下命令即可将项目部署到Github中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d -g</div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<h4 id="关于代码高亮和顶级域名配置的说明">关于代码高亮和顶级域名配置的说明</h4>
+<p>Hexo默认的主题虽然支持代码高亮功能（Hexo默认使用<a href="https://highlightjs.org/" target="_blank" rel="external">highlight</a>插件对代码进行高亮显示），但是不显示代码行号。具体原因有待考证:)</p>
+<p>更换为phase主题后，将代码插入到</p>
+<blockquote>
+<p>\</p>
+</blockquote>
+<figure class="highlight java"><figcaption><span>#这里你可以选择其他语言，比如html，ruby等</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&gt; \#插入你的代码</div><div class="line"></div><div class="line">&gt; \</div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="keyword">static</span> <span class="title">main</span>(String[] args) {</div><div class="line">	System.out.println(<span class="string">"Hello world"</span>);</div><div class="line">	System.out.println(<span class="string">"Welcome to my blog on Github~~~"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<p>对于顶级域名的绑定，其实也很简单，在hexo目录的source子目录下创建一个名为CNAME的文件，不需要文件扩展名。其内容为你的域名，如<a href="http://www.wikistyle.cn" target="_blank" rel="external">www.wikistyle.cn</a>。然后执行<code>hexo d -g</code>重新部署即可。当然，还需要你在你的域名管理系统中添加一个CNAME指向，其目的地址即为你创建的仓库名称，如<a href="http://wikistyle.github.io" target="_blank" rel="external">wikistyle.github.io</a>。</p>
 
     
     
     <footer class="meta">
       
       
+  <div class="tags">
+<a href="/tags/hexo-Github-highllight-homebrew-Mac/">hexo Github highllight homebrew Mac</a></div>
+
       
     </footer>
     
