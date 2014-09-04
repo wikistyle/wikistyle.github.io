@@ -106,7 +106,7 @@
 <h4 id="关于代码高亮和顶级域名配置的说明">关于代码高亮和顶级域名配置的说明</h4>
 <p>Hexo默认的主题虽然支持代码高亮功能（Hexo默认使用<a href="https://highlightjs.org/" target="_blank" rel="external">highlight</a>插件对代码进行高亮显示），但是不显示代码行号。具体原因有待考证:)</p>
 <p>更换为phase主题后，将代码插入到</p>
-<figure class="highlight java"><figcaption><span>#这里你可以选择其他语言，比如html，ruby等</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#插入你的代码</div></pre></td></tr></table></figure>
+<figure class="highlight nohighlight"><figcaption><span>java #这里你可以选择其他语言，比如html，ruby等</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="preprocessor">#插入你的代码</span></div></pre></td></tr></table></figure>
 
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="keyword">static</span> <span class="title">main</span>(String[] args) {</div><div class="line">	System.out.println(<span class="string">"Hello world"</span>);</div><div class="line">	System.out.println(<span class="string">"Welcome to my blog on Github~~~"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
