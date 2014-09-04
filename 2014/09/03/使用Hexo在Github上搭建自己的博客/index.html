@@ -59,20 +59,22 @@
   <div class="entry-content">
     
       <p>本文要实现的目标是在Github上搭建一个静态网站，并且支持顶级域名的绑定和代码的高亮显示。这里我使用Hexo来搭建自己的静态网站。</p>
+<a id="more"></a>
+
 <h4 id="基础环境的搭建">基础环境的搭建</h4>
 <ol>
 <li><p>为方便软件的安装，首先我们需要在Mac上安装一个类似Linux下包管理的软件。</p>
-<p> 这里我选择的是<a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a>。在Mac下，由于预安装了Ruby运行环境，所以安装Homebrew非常的方便，只需要一行命令&gt; 即可：</p>
-</li>
+<pre><code> 这里我选择的是[<span class="link_label">Homebrew</span>](<span class="link_url">http://brew.sh/</span>)。在Mac下，由于预安装了Ruby运行环境，所以安装Homebrew非常的方便，只需要一行命令&gt; 即可：
+</code></pre></li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div></pre></td></tr></table></figure>
 
 
-<pre><code>有关Homebrew的介绍，大家可以去其[<span class="link_label">官网</span>](<span class="link_url">http://brew.sh</span>)查看，这里就不再累述。
+<pre><code>    有关Homebrew的介绍，大家可以去其[官网](http:<span class="comment">//brew.sh)查看，这里就不再累述。</span>
 </code></pre><ol>
 <li><p>有了Homebrew做铺垫，安装<a href="http://hexo.io" target="_blank" rel="external">Hexo</a>就非常的容易了。</p>
-<p> 参考Hexo<a href="http://hexo.io/docs/" target="_blank" rel="external">官方文档</a>的提示，安装Hexo只需要简单的几条命令即可。</p>
-</li>
+<pre><code> 参考Hexo[<span class="link_label">官方文档</span>](<span class="link_url">http://hexo.io/docs/</span>)的提示，安装Hexo只需要简单的几条命令即可。
+</code></pre></li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ brew install npm</div><div class="line">$ npm install -g hexo</div></pre></td></tr></table></figure>
 
@@ -106,7 +108,14 @@
 <h4 id="关于代码高亮和顶级域名配置的说明">关于代码高亮和顶级域名配置的说明</h4>
 <p>Hexo默认的主题虽然支持代码高亮功能（Hexo默认使用<a href="https://highlightjs.org/" target="_blank" rel="external">highlight</a>插件对代码进行高亮显示），但是不显示代码行号。具体原因有待考证:)</p>
 <p>更换为phase主题后，将代码插入到</p>
-<figure class="highlight \java"><figcaption><span>#这里你可以选择其他语言，比如html，ruby等</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="preprocessor">#插入你的代码</span></div></pre></td></tr></table></figure>
+<pre><code class="nohighlight">
+
+
+<figure class="highlight java"><figcaption><span>#这里你可以选择其他语言，比如html，ruby等</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#插入你的代码</div></pre></td></tr></table></figure>
+
+</code></pre>
+
+
 
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="keyword">static</span> <span class="title">main</span>(String[] args) {</div><div class="line">	System.out.println(<span class="string">"Hello world"</span>);</div><div class="line">	System.out.println(<span class="string">"Welcome to my blog on Github~~~"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
